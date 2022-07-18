@@ -5,20 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Code Journal</title>
   <link rel="icon" href="images/favicon.ico">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer" />
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
+  <header class="purple-back">
+    <div class="container">
+      <div class="row">
+        <div class="column-full">
+          <p class="white-font">Code Journal</p>
+        </div>
+      </div>
+    </div>
   </header>
-  <main>
+  <main class="container">
+    <section>
+      <div class="row" data-view="entry-form">
+        <div class="column-full">
+          <h1>New Entry</h1>
+        </div>
+      </div>
+    </section>
+    <div data-view="entry-form">
+      <form class="row">
+        <div class="column-half">
+          <div class="pd-b">
+            <img src="images/placeholder-image-square.jpg" alt="placeholder">
+          </div>
+        </div>
+        <div class="column-half">
+          <label for="title" class="pd-b">Title</label>
+          <input required type="text" id="title">
+          <label for="photoURL" class="pd-b pd-t">Photo URL</label>
+          <input required type="text" id="photoURL">
+        </div>
+        <div class="column-full pd-b">
+          <label for="notes" class="pd-b pd-t">Notes</label>
+          <textarea required id="notes" rows="10"></textarea>
+        </div>
+        <div class="column-full pd-b text-right">
+          <button class="save-button">Save</button>
+        </div>
+      </form>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
