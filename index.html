@@ -16,36 +16,37 @@
   <header class="purple-back">
     <div class="container">
       <div class="row">
-        <div class="column-full">
-          <p class="white-font margin">Code Journal<a href="#" class="white-font">Entries</a></p>
+        <div class="column-full pd-tb-1">
+          <span class="white-font">Code Journal</span>
+          <a href="#" data-view="entries" class="white-font entries">Entries</a>
         </div>
       </div>
     </div>
   </header>
   <main class="container">
-    <div data-view="entries">
-      <div class="row align-center">
-        <div class="column-half">
+    <div data-view="entries" class="view hidden">
+      <div class="row align-center space-between">
+        <div class="column-auto">
           <h1>Entries</h1>
         </div>
-        <div class="column-half text-right">
-          <div class="align-center">
-            <a href="#" data-view="entry-form" class="fake-button view">New</a>
-          </div>
+        <div class="column-auto">
+          <a href="#" data-view="entry-form" class="fake-button form">New</a>
         </div>
       </div>
       <div class="row">
-        <p class="column-full text-center">No entries have been recorded.</p>
+        <div class="column-full text-center">
+          <p>No entries have been recorded.</p>
+        </div>
+        <ul></ul>
       </div>
-      <ul></ul>
     </div>
-    <div data-view="entry-form">
+    <div data-view="entry-form" class="view">
       <div class="row">
         <div class="column-full">
           <h1>New Entry</h1>
         </div>
       </div>
-      <form data-view="entry-form" class="row view">
+      <form data-view="entry-form" class="row">
         <div class="column-half">
           <div class="pd-b image-box">
             <img src="images/placeholder-image-square.jpg" alt="placeholder">
