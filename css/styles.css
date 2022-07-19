@@ -1,5 +1,6 @@
 body {
   font-family: "Proza Libre", sans-serif;
+  background-color: #f0f0f0;
 }
 
 label,
@@ -32,6 +33,12 @@ img {
   max-height: 300px;
   object-fit: cover;
   border-radius: 0.3rem;
+}
+
+a {
+  padding: 0 1rem;
+  text-decoration: none;
+  font-size: 0.85rem;
 }
 
 .purple-back {
@@ -67,7 +74,25 @@ img {
   text-align: right;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
 .save-button {
+  color: white;
+  background-color: #562b81;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  font-family: "Open sans", sans-serif;
+  text-transform: uppercase;
+}
+
+.fake-button {
   color: white;
   background-color: #562b81;
   border: none;
