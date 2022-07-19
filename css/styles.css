@@ -76,3 +76,16 @@ img {
   font-family: "Open sans", sans-serif;
   text-transform: uppercase;
 }
+
+.pd-0 {
+  padding: 0;
+}
+
+.margin-t0 {
+  margin-top: 0;
+}
+
+ul {
+  margin-top: 0;
+  padding: 0;
+}

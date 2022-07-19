@@ -31,4 +31,12 @@
   .column-half {
     width: 50%;
   }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  li {
+    margin-bottom: 2rem;
+  }
 }
