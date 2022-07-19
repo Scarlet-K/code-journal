@@ -17,8 +17,8 @@ function handleSubmit(event) {
   newEntry.notes = $form.notes.value;
   newEntry.entryId = data.nextEntryId;
   data.nextEntryId++;
-  var entries = data.entries;
-  entries.unshift(newEntry);
+  var entriesArray = data.entries;
+  entriesArray.unshift(newEntry);
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
 }
