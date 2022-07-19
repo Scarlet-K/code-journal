@@ -7,6 +7,11 @@ var data = {
   nextEntryId: 1
 };
 
+var previousEntries = localStorage.getItem('codejournal-local-storage');
+if (previousEntries !== null) {
+  data = JSON.parse(previousEntries);
+}
+
 window.addEventListener('beforeunload', handleBeforeUnload);
 
 function handleBeforeUnload(event) {
