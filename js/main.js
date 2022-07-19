@@ -13,11 +13,12 @@ function handleSubmit(event) {
   event.preventDefault();
   var newEntry = {};
   newEntry.title = $form.title.value;
-  newEntry.photoURL = $form.title.value;
+  newEntry.photoURL = $form.photoURL.value;
   newEntry.notes = $form.notes.value;
   newEntry.entryId = data.nextEntryId;
   data.nextEntryId++;
-  data.entries.unshift(newEntry);
+  var entries = data.entries;
+  entries.unshift(newEntry);
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
 }
