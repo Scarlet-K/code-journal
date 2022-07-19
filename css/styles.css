@@ -6,7 +6,6 @@ label,
 input,
 textarea {
   display: block;
-  width: 100%;
 }
 
 input {
@@ -43,12 +42,25 @@ img {
   color: white;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .pd-b {
   padding-bottom: 0.5rem;
 }
 
 .pd-t {
   padding-top: 1.5rem;
+}
+
+.pd-tb {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.margin {
+  margin: 0.5rem 0;
 }
 
 .text-right {
