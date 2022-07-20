@@ -30,15 +30,17 @@ function handleSubmit(event) {
   swapView('entries');
 }
 
-/*  <li class="row pd-b">
-      <div class="column-half">
-        <img src="" alt="placeholder">
-      </div>
-      <div class="column-half">
-        <h2>Title</h2>
-        <p>Lorem ipsum dolor sit amet.</p>
-      </div>
-    </li> */
+/*
+<li class="row pd-b">
+  <div class="column-half">
+    <img src="" alt="placeholder">
+  </div>
+  <div class="column-half">
+    <h2>Title</h2>
+    <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+</li>
+*/
 
 function handleDOMContentLoaded(event) {
   for (var i = 0; i < data.entries.length; i++) {
@@ -92,5 +94,3 @@ function handleClick(event) {
 // the "no entries" is hidden
 // if the data.entries !== []
 // the "no entries" is hidden
-
-//
