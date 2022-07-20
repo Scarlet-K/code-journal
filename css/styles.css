@@ -71,6 +71,10 @@ a {
   padding-bottom: 0.5rem;
 }
 
+.pd-r {
+  padding-right: 2rem;
+}
+
 .margin {
   margin: 0.5rem 0;
 }
@@ -122,4 +126,18 @@ a.fake-button {
 ul {
   margin-top: 0;
   padding: 0;
+}
+
+.pos-abs {
+  position: absolute;
+  right: 0.4rem;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.pen {
+  color: #562b81;
+  font-size: 1.3rem;
 }

@@ -54,13 +54,16 @@ function renderEntry(entry) {
       <img src="" alt="placeholder">
     </div>
     <div class="column-half">
-      <h2>Title</h2>
-      <p>Lorem ipsum dolor sit amet.</p>
+      <div class="row">
+        <h2 class="column-auto">Title</h2>
+        <i class="fa-solid fa-pen column-auto"></i>
+        <p class="column-full">Lorem ipsum dolor sit amet.</p>
+      </div>
     </div>
   </li>
 */
   var $li = document.createElement('li');
-  $li.setAttribute('class', 'row');
+  $li.setAttribute('class', 'row pos-rel');
   var $divImg = document.createElement('div');
   $divImg.setAttribute('class', 'column-half');
   var $img = document.createElement('img');
@@ -69,7 +72,10 @@ function renderEntry(entry) {
   var $divText = document.createElement('div');
   $divText.setAttribute('class', 'column-half');
   var $h2 = document.createElement('h2');
+  $h2.setAttribute('class', 'pd-r');
   $h2.textContent = entry.title;
+  var $i = document.createElement('i');
+  $i.setAttribute('class', 'fa-solid fa-pen pos-abs pen');
   var $p = document.createElement('p');
   $p.textContent = entry.notes;
 
@@ -77,6 +83,7 @@ function renderEntry(entry) {
   $divImg.appendChild($img);
   $li.appendChild($divText);
   $divText.appendChild($h2);
+  $h2.appendChild($i);
   $divText.appendChild($p);
   return $li;
 }
