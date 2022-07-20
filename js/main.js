@@ -113,5 +113,9 @@ function handleEntries(event) {
         data.editing = data.entries[i];
       }
     }
+    $form.title.value = data.editing.title;
+    $form.photoURL.value = data.editing.photoURL;
+    $form.notes.value = data.editing.notes;
+    $img.setAttribute('src', data.editing.photoURL);
   }
 }
