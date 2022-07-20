@@ -2,12 +2,14 @@ var $photoInput = document.querySelector('#photoURL');
 var $img = document.querySelector('img');
 var $form = document.querySelector('form');
 var $ul = document.querySelector('ul');
-// var $aForm = document.querySelector('a.form');
-// var $aEntries = document.querySelector('a.entries');
+var $aForm = document.querySelector('a.form');
+var $aEntries = document.querySelector('a.entries');
 
 $photoInput.addEventListener('input', handlePhotoInput);
 $form.addEventListener('submit', handleSubmit);
 window.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
+$aForm.addEventListener('click', handleClick);
+$aEntries.addEventListener('click', handleClick);
 
 function handlePhotoInput(event) {
   $img.setAttribute('src', $photoInput.value);
@@ -77,6 +79,10 @@ function swapView(string) {
       $viewList[i].classList.add('hidden');
     }
   }
+}
+
+function handleClick(event) {
+  swapView(event.target.getAttribute('data-view'));
 }
 
 // if the data.entries === []
