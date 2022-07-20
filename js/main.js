@@ -4,6 +4,7 @@ var $form = document.querySelector('form');
 var $ul = document.querySelector('ul');
 var $aForm = document.querySelector('a.form');
 var $aEntries = document.querySelector('a.entries');
+var $noEntries = document.querySelector('.no-entries');
 
 $photoInput.addEventListener('input', handlePhotoInput);
 $form.addEventListener('submit', handleSubmit);
@@ -47,6 +48,7 @@ function handleDOMContentLoaded(event) {
     renderEntry(data.entries[i]);
     $ul.append(renderEntry(data.entries[i]));
   }
+  swapView(data.view);
 }
 
 function renderEntry(entry) {
@@ -85,7 +87,13 @@ function swapView(string) {
 }
 
 function handleClick(event) {
-  swapView(event.target.getAttribute('data-view'));
+  if ((event.target.matches('.entries')) && (data.entries[0] === undefined)) {
+    swapView('entries');
+    $noEntries.classList.remove('hidden');
+  } else {
+    swapView(event.target.getAttribute('data-view'));
+    $noEntries.classList.add('hidden');
+  }
 }
 
 // if the data.entries === []
