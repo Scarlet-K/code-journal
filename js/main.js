@@ -2,9 +2,12 @@ var $photoInput = document.querySelector('#photoURL');
 var $img = document.querySelector('img');
 var $form = document.querySelector('form');
 var $ul = document.querySelector('ul');
+// var $aForm = document.querySelector('a.form');
+// var $aEntries = document.querySelector('a.entries');
 
 $photoInput.addEventListener('input', handlePhotoInput);
 $form.addEventListener('submit', handleSubmit);
+window.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
 
 function handlePhotoInput(event) {
   $img.setAttribute('src', $photoInput.value);
@@ -21,7 +24,8 @@ function handleSubmit(event) {
   data.entries.unshift(newEntry);
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
-  $ul.unshift(renderEntry(newEntry));
+  $ul.prepend(renderEntry(newEntry));
+  swapView('entries');
 }
 
 /*  <li class="row pd-b">
@@ -30,16 +34,9 @@ function handleSubmit(event) {
       </div>
       <div class="column-half">
         <h2>Title</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id arcu laoreet, porttitor orci eu, pharetra ipsum. Ut
-          non mi eget arcu vehicula euismod nec id lacus. Mauris tempor ex elit, convallis vestibulum turpis eleifend ac. Quisque
-          pellentesque, orci et porttitor egestas, justo odio maximus mauris, sed mattis augue nulla congue mauris. Integer
-          aliquam congue magna sed efficitur. Proin ac pharetra velit.
-        </p>
+        <p>Lorem ipsum dolor sit amet.</p>
       </div>
     </li> */
-
-window.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
 
 function handleDOMContentLoaded(event) {
   for (var i = 0; i < data.entries.length; i++) {
@@ -71,21 +68,22 @@ function renderEntry(entry) {
   return $li;
 }
 
-var $viewList = document.querySelectorAll('.view');
-
-var $aEntry = document.querySelector('a.entries');
-var $aForm = document.querySelector('a.form');
-
-$aEntry.addEventListener('click', handleSwap);
-$aForm.addEventListener('click', handleSwap);
-
-function handleSwap(event) {
-  var $views = event.target.getAttribute('data-view');
+function swapView(string) {
+  var $viewList = document.querySelectorAll('.view');
   for (var i = 0; i < $viewList.length; i++) {
-    if ($views === $viewList[i].getAttribute('data-view')) {
+    if ($viewList[i].getAttribute('data-view') === string) {
       $viewList[i].classList.remove('hidden');
     } else {
       $viewList[i].classList.add('hidden');
     }
   }
 }
+
+// if the data.entries === []
+// the "no entries" is on view
+// if the user presses save
+// the "no entries" is hidden
+// if the data.entries !== []
+// the "no entries" is hidden
+
+//
