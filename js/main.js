@@ -33,18 +33,6 @@ function handleSubmit(event) {
   $noEntries.classList.add('hidden');
 }
 
-/*
-<li class="row pd-b">
-  <div class="column-half">
-    <img src="" alt="placeholder">
-  </div>
-  <div class="column-half">
-    <h2>Title</h2>
-    <p>Lorem ipsum dolor sit amet.</p>
-  </div>
-</li>
-*/
-
 function handleDOMContentLoaded(event) {
   for (var i = 0; i < data.entries.length; i++) {
     renderEntry(data.entries[i]);
@@ -60,6 +48,17 @@ function handleDOMContentLoaded(event) {
 }
 
 function renderEntry(entry) {
+/*
+  <li class="row pd-b">
+    <div class="column-half">
+      <img src="" alt="placeholder">
+    </div>
+    <div class="column-half">
+      <h2>Title</h2>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </li>
+*/
   var $li = document.createElement('li');
   $li.setAttribute('class', 'row');
   var $divImg = document.createElement('div');
