@@ -5,6 +5,7 @@ var $ul = document.querySelector('ul');
 var $aForm = document.querySelector('a.form');
 var $aEntries = document.querySelector('a.entries');
 var $noEntries = document.querySelector('.no-entries');
+var $entries = document.querySelector('.entries');
 
 $photoInput.addEventListener('input', handlePhotoInput);
 $form.addEventListener('submit', handleSubmit);
@@ -29,6 +30,7 @@ function handleSubmit(event) {
   $form.reset();
   $ul.prepend(renderEntry(newEntry));
   swapView('entries');
+  $noEntries.classList.add('hidden');
 }
 
 /*
@@ -48,7 +50,13 @@ function handleDOMContentLoaded(event) {
     renderEntry(data.entries[i]);
     $ul.append(renderEntry(data.entries[i]));
   }
-  swapView(data.view);
+  if (data.entries.length === 0) {
+    $entries.classList.remove('hidden');
+    $noEntries.classList.remove('hidden');
+  } else {
+    $noEntries.classList.add('hidden');
+    swapView(data.view);
+  }
 }
 
 function renderEntry(entry) {
@@ -87,18 +95,5 @@ function swapView(string) {
 }
 
 function handleClick(event) {
-  if ((event.target.matches('.entries')) && (data.entries[0] === undefined)) {
-    swapView('entries');
-    $noEntries.classList.remove('hidden');
-  } else {
-    swapView(event.target.getAttribute('data-view'));
-    $noEntries.classList.add('hidden');
-  }
+  swapView(event.target.getAttribute('data-view'));
 }
-
-// if the data.entries === []
-// the "no entries" is on view
-// if the user presses save
-// the "no entries" is hidden
-// if the data.entries !== []
-// the "no entries" is hidden
