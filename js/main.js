@@ -79,6 +79,7 @@ function swapView(string) {
       $viewList[i].classList.add('hidden');
     }
   }
+  data.view = string;
 }
 
 function handleClick(event) {
