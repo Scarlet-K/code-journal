@@ -12,6 +12,7 @@ $form.addEventListener('submit', handleSubmit);
 window.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
 $aForm.addEventListener('click', handleClick);
 $aEntries.addEventListener('click', handleClick);
+$ul.addEventListener('click', handleEntries);
 
 function handlePhotoInput(event) {
   $img.setAttribute('src', $photoInput.value);
@@ -49,21 +50,20 @@ function handleDOMContentLoaded(event) {
 
 function renderEntry(entry) {
 /*
-  <li class="row pd-b">
+  <li class="row pos-rel">
     <div class="column-half">
       <img src="" alt="placeholder">
     </div>
     <div class="column-half">
-      <div class="row">
-        <h2 class="column-auto">Title</h2>
-        <i class="fa-solid fa-pen column-auto"></i>
-        <p class="column-full">Lorem ipsum dolor sit amet.</p>
-      </div>
+      <h2 class="pd-r">Title</h2>
+      <i class="fa-solid fa-pen pos-abs pen"></i>
+      <p>Lorem ipsum dolor sit amet.</p>
     </div>
   </li>
 */
   var $li = document.createElement('li');
   $li.setAttribute('class', 'row pos-rel');
+  $li.setAttribute('data-entry-id', entry.entryId);
   var $divImg = document.createElement('div');
   $divImg.setAttribute('class', 'column-half');
   var $img = document.createElement('img');
@@ -102,4 +102,16 @@ function swapView(string) {
 
 function handleClick(event) {
   swapView(event.target.getAttribute('data-view'));
+}
+
+function handleEntries(event) {
+  if (event.target.tagName === 'I') {
+    swapView('entry-form');
+    for (var i = 0; i < data.entries.length; i++) {
+      var clickedEntry = event.target.closest('li');
+      if (clickedEntry.getAttribute('data-entry-id') === JSON.stringify(data.entries[i].entryId)) {
+        data.editing = data.entries[i];
+      }
+    }
+  }
 }

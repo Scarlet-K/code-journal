@@ -130,7 +130,7 @@ ul {
 
 .pos-abs {
   position: absolute;
-  right: 0.4rem;
+  right: 0.3rem;
 }
 
 .pos-rel {
@@ -138,6 +138,11 @@ ul {
 }
 
 .pen {
+  color: #823fc4;
+  font-size: 1.2rem;
+}
+
+.pen:hover {
+  cursor: pointer;
   color: #562b81;
-  font-size: 1.3rem;
 }
