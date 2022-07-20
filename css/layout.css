@@ -18,17 +18,30 @@
   width: 100%;
 }
 
+.column-auto {
+  width: auto;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 900px;
   }
 
   .column-full,
-  .column-half {
+  .column-half,
+  .column-auto {
     padding: 0 0.75rem;
   }
 
   .column-half {
     width: 50%;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  li {
+    margin-bottom: 2rem;
   }
 }

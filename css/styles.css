@@ -1,5 +1,6 @@
 body {
   font-family: "Proza Libre", sans-serif;
+  background-color: #f0f0f0;
 }
 
 label,
@@ -34,6 +35,12 @@ img {
   border-radius: 0.3rem;
 }
 
+a {
+  padding: 0 1rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
 .purple-back {
   background-color: #562b81;
 }
@@ -59,12 +66,29 @@ img {
   padding-bottom: 1rem;
 }
 
+.pd-tb-1 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 .margin {
   margin: 0.5rem 0;
 }
 
 .text-right {
   text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
 }
 
 .save-button {
@@ -75,4 +99,27 @@ img {
   padding: 0.4rem 0.8rem;
   font-family: "Open sans", sans-serif;
   text-transform: uppercase;
+}
+
+a.fake-button {
+  color: white;
+  background-color: #562b81;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  font-family: "Open sans", sans-serif;
+  text-transform: uppercase;
+}
+
+.pd-0 {
+  padding: 0;
+}
+
+.margin-t0 {
+  margin-top: 0;
+}
+
+ul {
+  margin-top: 0;
+  padding: 0;
 }
