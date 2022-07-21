@@ -71,8 +71,8 @@ a {
   padding-bottom: 0.5rem;
 }
 
-.margin {
-  margin: 0.5rem 0;
+.pd-r {
+  padding-right: 2rem;
 }
 
 .text-right {
@@ -111,15 +111,21 @@ a.fake-button {
   text-transform: uppercase;
 }
 
-.pd-0 {
-  padding: 0;
-}
-
-.margin-t0 {
-  margin-top: 0;
-}
-
 ul {
   margin-top: 0;
   padding: 0;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.pen {
+  color: #823fc4;
+  font-size: 1.2rem;
+}
+
+.pen:hover {
+  cursor: pointer;
+  color: #562b81;
 }
