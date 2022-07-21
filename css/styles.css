@@ -116,11 +116,6 @@ ul {
   padding: 0;
 }
 
-.pos-abs {
-  position: absolute;
-  right: 0.3rem;
-}
-
 .pos-rel {
   position: relative;
 }

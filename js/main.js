@@ -14,7 +14,7 @@ $form.addEventListener('submit', handleSubmit);
 window.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
 $aForm.addEventListener('click', handleClick);
 $aEntries.addEventListener('click', handleClick);
-$ul.addEventListener('click', handleEntries);
+$ul.addEventListener('click', handleEdit);
 
 function handlePhotoInput(event) {
   $img.setAttribute('src', $photoInput.value);
@@ -124,7 +124,7 @@ function handleClick(event) {
   data.editing = null;
 }
 
-function handleEntries(event) {
+function handleEdit(event) {
   if (event.target.tagName === 'I') {
     swapView('entry-form');
     $editEntry.classList.remove('hidden');
