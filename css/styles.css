@@ -53,6 +53,10 @@ a {
   font-weight: bold;
 }
 
+.pd {
+  padding: 0.5rem;
+}
+
 .pd-b {
   padding-bottom: 0.5rem;
 }
@@ -87,8 +91,16 @@ a {
   align-items: center;
 }
 
+.align-self {
+  align-self: center;
+}
+
 .space-between {
   justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .save-button {
@@ -99,6 +111,7 @@ a {
   padding: 0.4rem 0.8rem;
   font-family: "Open sans", sans-serif;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 a.fake-button {
@@ -109,6 +122,19 @@ a.fake-button {
   padding: 0.4rem 0.8rem;
   font-family: "Open sans", sans-serif;
   text-transform: uppercase;
+}
+
+.delete-button {
+  color: rgb(255, 111, 0);
+  border: none;
+  text-decoration: underline rgb(255, 111, 0);
+  cursor: pointer;
+  transition: color 0.5s ease, text-decoration 0.5s ease;
+}
+
+.delete-button:hover {
+  color: red;
+  text-decoration: underline red;
 }
 
 ul {
@@ -128,4 +154,45 @@ ul {
 .pen:hover {
   cursor: pointer;
   color: #562b81;
+}
+
+.overlay {
+  background: rgba(0 0 0 / 75%);
+}
+
+.fixed {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-row {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 0.2rem;
+  padding: 1rem;
+}
+
+.cancel {
+  background-color: rgb(212, 212, 212);
+  border-radius: 0.3rem;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
+
+.confirm {
+  color: white;
+  background-color: #dc2626;
+  border-radius: 0.3rem;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
 }
