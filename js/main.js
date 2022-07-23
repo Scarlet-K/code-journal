@@ -12,7 +12,7 @@ var $openModal = document.querySelector('.open-modal');
 var $closeModal = document.querySelector('.close-modal');
 var $modalContainer = document.querySelector('.modal-container');
 
-$photoInput.addEventListener('input', handlePhoto);
+$photoInput.addEventListener('input', changeImage);
 $form.addEventListener('submit', handleSubmit);
 window.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
 $newFormButton.addEventListener('click', handleClick);
@@ -22,7 +22,7 @@ $openModal.addEventListener('click', openModal);
 $closeModal.addEventListener('click', closeModal);
 $confirmDelete.addEventListener('click', handleDelete);
 
-function handlePhoto(event) {
+function changeImage(event) {
   $img.setAttribute('src', $photoInput.value);
 }
 
@@ -62,7 +62,6 @@ function handleDOMContentLoaded(event) {
     renderEntry(data.entries[i]);
     $ul.append(renderEntry(data.entries[i]));
   }
-  showNoEntryDefault();
   swapView(data.view);
   data.editing = null;
 }
