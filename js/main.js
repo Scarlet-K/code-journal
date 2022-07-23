@@ -5,7 +5,6 @@ var $ul = document.querySelector('ul');
 var $newFormButton = document.querySelector('.new-form-button');
 var $entriesButton = document.querySelector('.entries-button');
 var $noEntries = document.querySelector('.no-entries');
-var $entriesHeading = document.querySelector('.entries-heading');
 var $editEntryHeading = document.querySelector('.edit-entry-heading');
 var $newEntryHeading = document.querySelector('.new-entry-heading');
 var $confirmDelete = document.querySelector('.confirm-delete');
@@ -29,11 +28,12 @@ function handlePhoto(event) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  var newEntry = {};
-  newEntry.title = $form.title.value;
-  newEntry.photoURL = $form.photoURL.value;
-  newEntry.notes = $form.notes.value;
-  newEntry.entryId = data.nextEntryId;
+  var newEntry = {
+    title: $form.title.value,
+    photoURL: $form.photoURL.value,
+    notes: $form.notes.value,
+    entryId: data.nextEntryId
+  };
   data.nextEntryId++;
   data.entries.unshift(newEntry);
   $ul.prepend(renderEntry(newEntry));
@@ -53,7 +53,7 @@ function handleSubmit(event) {
   $form.reset();
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   swapView('entries');
-  $noEntries.classList.add('hidden');
+  showNoEntryDefault();
   data.editing = null;
 }
 
@@ -62,13 +62,8 @@ function handleDOMContentLoaded(event) {
     renderEntry(data.entries[i]);
     $ul.append(renderEntry(data.entries[i]));
   }
-  if (data.entries.length === 0) {
-    $entriesHeading.classList.remove('hidden');
-    $noEntries.classList.remove('hidden');
-  } else {
-    $noEntries.classList.add('hidden');
-    swapView(data.view);
-  }
+  showNoEntryDefault();
+  swapView(data.view);
   data.editing = null;
 }
 
@@ -134,6 +129,7 @@ function handleClick(event) {
     $newEntryHeading.classList.remove('hidden');
   }
   swapView(event.target.getAttribute('data-view'));
+  showNoEntryDefault();
   data.editing = null;
 }
 
@@ -180,6 +176,14 @@ function handleDelete(event) {
   }
   $modalContainer.classList.add('hidden');
   swapView('entries');
-  $noEntries.classList.remove('hidden');
+  showNoEntryDefault();
   data.editing = null;
+}
+
+function showNoEntryDefault() {
+  if (data.entries.length === 0) {
+    $noEntries.classList.remove('hidden');
+  } else {
+    $noEntries.classList.add('hidden');
+  }
 }

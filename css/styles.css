@@ -182,6 +182,7 @@ ul {
   text-transform: uppercase;
   font-weight: bold;
   padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 
 .confirm-delete {
@@ -192,4 +193,5 @@ ul {
   text-transform: uppercase;
   font-weight: bold;
   padding: 0.5rem 1rem;
+  cursor: pointer;
 }
